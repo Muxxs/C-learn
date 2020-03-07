@@ -2,10 +2,7 @@
  * @Email: muxxs@foxmail.com
  * @Auther: Muxxs
  */
-/*
- * @Editors: CNU 19 Muxxs
- * @Email: muxxs@foxmail.com
- */
+
 
 #include<stdio.h>
 
@@ -17,12 +14,12 @@ int main(){
         scanf("%c",&a[i]);
     }
 
-    // 为什么只有五个？？？？？
+    // 回车也会作为一个字符存下（ASCII码为10）
 
     for (int i = 0; i < 10; i++)
     {
         /* code */
-        printf("%c",a[i]);
+        printf("%d:%d\n",i,a[i]);
     }
     return 0;
 }
