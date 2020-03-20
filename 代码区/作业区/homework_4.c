@@ -100,21 +100,45 @@ void Five_number(int number)
         printf("一位数");
         num = 1;
     }
+    printf("\n正向输出:\n%d", number);
     /* 分别输出每位 */
-    printf("\n正向输出:\n");
+    printf("\n反向输出:\n");
     for (int i = 0; i < num; i++)
     {
         /* code */
         int this = (number / (int)pow((double)10, (double)i)) % 10;
         printf("%d", this);
     }
-    printf("\n反向输出:\n");
-    for (int i = 0; i <= num; i++)
+}
+
+int benifition(int i)
+{
+    int res;
+    if (i <= 100000)
     {
-        /* code */
-        int this = (number / (int)pow((double)10, (double)(num - i - 1))) % 10;
-        printf("%d", this);
+        res = i * 0.1;
     }
+    else if (i <= 200000)
+    {
+        res = 10000 + (i - 100000) * 0.075;
+    }
+    else if (i <= 400000)
+    {
+        res = 10000 + 7500 + (i - 200000) * 0.05;
+    }
+    else if (i <= 600000)
+    {
+        res = 10000 + 7500 + 10000 + (i - 400000) * 0.03;
+    }
+    else if (i <= 1000000)
+    {
+        res = 10000 + 7500 + 10000 + 200000 * 0.015 + (i - 600000) * 0.015;
+    }
+    else if (i > 1000000)
+    {
+        res = 10000 + 7500 + 10000 + 200000 * 0.015 + 6000 + (i - 1000000) * 0.01;
+    }
+    return res;
 }
 
 int main()
@@ -133,6 +157,11 @@ int main()
     printf("\nPlease input a number who >0 and <=99999:");
     scanf("%d", &number);
     Five_number(number);
+
+    int i;
+    printf("\nPlease inut the I:");
+    scanf("%d", &i);
+    printf("Benifit is:%d", benifition(i));
 
     return 0;
 }
