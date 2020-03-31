@@ -105,7 +105,6 @@ void Five_number(int number)
     printf("\n反向输出:\n");
     for (int i = 0; i < num; i++)
     {
-        /* code */
         int this = (number / (int)pow((double)10, (double)i)) % 10;
         printf("%d", this);
     }
@@ -161,7 +160,7 @@ int main()
     int i;
     printf("\nPlease inut the I:");
     scanf("%d", &i);
-    printf("Benifit is:%d", benifition(i));
+    printf("Benifit is:%d\n", benifition(i));
 
     return 0;
 }
